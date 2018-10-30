@@ -13,4 +13,5 @@ int main(){
 void file_info(int file){
   struct stat * status;
   printf("File size: %d",status.st_size);
+  
 }
