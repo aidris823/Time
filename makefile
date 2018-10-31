@@ -1,6 +1,9 @@
-all: time.o
-	gcc time.o 
-time.o: time.c
+all: main.o
+	gcc -o go main.o
+time.o: main.c
 	gcc -c main.c
-run: 
-	./a.out
+run:
+	./go
+clear:
+	rm go
+	rm *.o
