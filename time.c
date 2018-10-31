@@ -5,12 +5,15 @@
 #include <time.h>
 
 int main(){
-  int file = open("file.txt",O_WRONLY|O_CREAT,0644);
-  file_info(file);
+  file_info();
   return 0;
 }
 
-void file_info(int file){
-  struct stat * status;
-  printf("File size: %d",status.st_size);
+int file_info(){
+  struct stat  status;
+  stat("File.txt",&status);
+  printf("File size: %d\n",status.st_size); 
+  printf("Mode/Permissions: %o\n",status.st_mode);
+  printf("Time of last access:%s",ctime(&status.st_atime));
+  return 0;
 }
